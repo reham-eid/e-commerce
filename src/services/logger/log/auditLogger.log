@@ -1,0 +1,5 @@
+27/03/2024, 10:52:18 pm | ERROR | Error capturing audit log: | data {} | 
+27/03/2024, 10:58:52 pm | ERROR | Error capturing audit log: | data {} | 
+27/03/2024, 11:23:20 pm | ERROR | Error capturing audit log: | data {"errors":{"auditOn":{"name":"ValidatorError","message":"Path `auditOn` is required.","properties":{"message":"Path `auditOn` is required.","type":"required","path":"auditOn"},"kind":"required","path":"auditOn"}},"_message":"audit validation failed","name":"ValidationError","message":"audit validation failed: auditOn: Path `auditOn` is required."} | 
+27/03/2024, 11:25:26 pm | ERROR | Error capturing audit log: | data {} | 
+27/03/2024, 11:30:20 pm | ERROR | Error capturing audit log: | data {} | 

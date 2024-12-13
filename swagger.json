@@ -1,0 +1,133 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "title": "Ecommerce API",
+      "description": "An API for ecommerce works built using NodeJS & MongoDB",
+      "version": "1.0.0",
+      "contact": {
+        "name": "Reham Eid",
+        "email": "rehameid2001@gmail.com",
+        "url": "https://github.com/rekiBE21"
+      }
+    },
+    "servers": [
+      {
+        "url": "https://e-commerce-3fkz.onrender.com",
+        "description": "Production Server"
+      },
+      {
+        "url": "http://localhost:4001/api/v1",
+        "description": "Development Server"
+      }
+    ],
+    "tags": [
+      {
+        "name": "E-Commerce",
+        "description": "API"
+      },
+      {
+        "name": "Products",
+        "description": "API for managing products"
+      },
+      {
+        "name": "Categories",
+        "description": "API for managing categories"
+      },
+      {
+        "name": "Brands",
+        "description": "API for managing brands"
+      },     
+        {
+        "name": "Users",
+        "description": "API for managing users"
+      }
+    ],
+    "schemes": [
+      "http",
+      "https"
+    ],
+    "consumes": [
+      "application/json"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "paths": {
+      "/api/v1/users/allUsers":{
+        "get":{
+          "tags":[
+            "users"
+          ],
+          "summary":"Get All Users",
+          "description":"Get List of Users",
+          "responses":{
+            "200":{
+              "description":"A successful response",
+              "schemes":{
+                "$ref":"#/definitions/UsersResponse"
+              }
+            },
+            "500":{
+              "description":"Internal Server Error"
+            }
+          }
+        }
+      },
+      "auth/signUp": {
+        "post": "signUp"
+      }
+    },
+    "definitions":{
+      "User":{
+        "type":"object",
+        "properties":{
+          "username":{
+            "type":"string"
+          },
+          "role": {
+            "type": "string",
+            "example": "admin"
+          },
+          "profilePic":{
+            "type":"string"
+          },
+          "email":{
+            "type":"string"
+          },
+          "password":{
+            "type":"string"
+          },
+          "age":{
+            "type":"integer"
+          },
+          "phone":{
+            "type":"string"
+          },
+          "provider":{
+            "type":"string"
+          },
+          "token":{
+            "type":"string"
+          }
+        }
+        
+      },
+      "UsersResponse":{
+        "type":"object",
+        "required":[
+          "status","data"
+        ],
+        "properties":{
+          "status":{
+            "type":"string"
+          },
+        "data":{
+          "type":"array",
+          "items":{
+            "$ref":"#/definitions/User"
+          }
+        }
+      }
+    }
+  }
+}
